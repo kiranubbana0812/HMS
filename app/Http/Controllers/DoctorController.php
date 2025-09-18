@@ -14,12 +14,28 @@ class DoctorController extends Controller
     }
     public function index(Request $request)
     {
+<<<<<<< HEAD
         $page = $request->query('page', 1);
 
         $token = session('auth_token'); // Get token from session
         if (!$token) {
             return redirect()->route('login')->withErrors(['message' => 'Session expired. Please log in again.']);
         }
+=======
+        //dd($request);
+		
+		$page = $request->query('page', 1);
+		$perPage = 15;
+       
+		$token = session('auth_token'); // Get token from session
+
+		//dd($token);
+        if (!$token) {
+            return redirect()->route('login')->withErrors(['message' => 'Session expired. Please log in again.']);
+        }
+
+		//dd($token);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         // Collect all filters from request
 		$queryParams = $request->query();
 		$queryParams['page'] = $page; // Always set page
@@ -48,6 +64,11 @@ class DoctorController extends Controller
 				'doctors' => $doctorsData['data'] ?? [],
 				'pagination' => $doctorsData['pagination'] ?? null,
 				'filters' => $queryParams,
+<<<<<<< HEAD
+=======
+				'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 				'departmentData' => $departmentsData['data'] ?? []
 			]);
 		}
@@ -56,6 +77,11 @@ class DoctorController extends Controller
 				'doctors' => $doctorsData['data'] ?? [],
 				'pagination' => $doctorsData['pagination'] ?? null,
 				'filters' => $queryParams,
+<<<<<<< HEAD
+=======
+				'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 				'departmentData' => $departmentsData['data'] ?? []
 			]);
 		}

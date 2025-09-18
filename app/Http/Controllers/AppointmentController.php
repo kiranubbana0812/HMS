@@ -16,7 +16,11 @@ class AppointmentController extends Controller
     public function index(Request $request)
     {
         $page = $request->query('page', 1);
+<<<<<<< HEAD
         
+=======
+        $perPage = 15;
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         /*$filters = $request->only([
             'patient_id', 'patient_name', 'doctor_id', 'doctor_name', 'department', 'from_date', 'to_date'
         ]);*/
@@ -82,6 +86,11 @@ class AppointmentController extends Controller
 				'appointments' => $appointmentData['data'] ?? [],
 				'pagination' => $appointmentData['pagination'] ?? null,
 				'filters' => $queryParams,
+<<<<<<< HEAD
+=======
+				'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 				'todaysCount' => $todaysCount['data'] ?? [],
 				'departmentData' => $departmentsData['data'] ?? []
 			]);
@@ -91,6 +100,11 @@ class AppointmentController extends Controller
 				'appointments' => $appointmentData['data'] ?? [],
 				'pagination' => $appointmentData['pagination'] ?? null,
 				'filters' => $queryParams,
+<<<<<<< HEAD
+=======
+				'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 				'todaysCount' => $todaysCount['data'] ?? 0,
 				'departmentData' => $departmentsData['data'] ?? [],
 			]);
@@ -100,6 +114,11 @@ class AppointmentController extends Controller
 				'appointments' => $appointmentData['data'] ?? [],
 				'pagination' => $appointmentData['pagination'] ?? null,
 				'filters' => $queryParams,
+<<<<<<< HEAD
+=======
+				'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 				'todaysCount' => $todaysCount['data'] ?? 0,
 				'departmentData' => $departmentsData['data'] ?? [],
 			]);

@@ -38,7 +38,12 @@ class DashboardController extends Controller
 			$data = null; // or []
 		}
 
+<<<<<<< HEAD
 	   switch ($role) {
+=======
+	   
+		switch ($role) {
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 			case 'superadmin':
 				if ($data) {
 					return view('dashboard.superadmin', compact('data'));
@@ -132,6 +137,7 @@ class DashboardController extends Controller
     {
         $token = session('auth_token');       
               
+<<<<<<< HEAD
         if(session('user.role') === "pharma") {
             $response = Http::withToken($token) 
                         ->get(env('API_BASE_URL') . '/api/v1/pharma/user/profile');
@@ -155,12 +161,23 @@ class DashboardController extends Controller
             ]);    
         }
         
+=======
+        $response = Http::withToken($token) 
+                        ->get(env('API_BASE_URL') . '/api/v1/user/profile');
+        $UserData = $response->json();  
+       // dd($UserData);
+
+        return view('dashboard.userprofile', [
+            'userdata' => $UserData['data'] ?? [],
+        ]);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
     
     }
 
     public function edit()
     {
         $token = session('auth_token'); 
+<<<<<<< HEAD
         if(session('user.role') === "pharma") {
             $response = Http::withToken($token) 
             ->get(env('API_BASE_URL') . '/api/v1/pharma/user/profile');
@@ -183,6 +200,15 @@ class DashboardController extends Controller
             ]);
         }
                        
+=======
+        $response = Http::withToken($token) 
+            ->get(env('API_BASE_URL') . '/api/v1/user/profile');
+        $userUpdateData = $response->json();    
+        //dd($userUpdateData);
+        return view('dashboard.user_profileupdate', [
+                'userdata' => $userUpdateData['data'] ?? [],
+        ]);               
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
     }
 
     public function update(Request $request)
@@ -236,6 +262,7 @@ class DashboardController extends Controller
             
                 $validated['profile_image'] = url('images/users/' . $filename);
             }
+<<<<<<< HEAD
             
             if(session('user.role') === "pharma") {
                 $response = Http::withToken($token)
@@ -246,6 +273,10 @@ class DashboardController extends Controller
                 ->put(env('API_BASE_URL') . "/api/v1/user/update", $validated);
             }
             
+=======
+            $response = Http::withToken($token)
+                ->put(env('API_BASE_URL') . "/api/v1/user/update", $validated);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
             if ($response->successful()) {
                 return redirect()->back()->with('success', 'User profile updated successfully.');
             } else {

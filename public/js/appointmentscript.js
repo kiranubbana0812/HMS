@@ -110,7 +110,10 @@ $(document).ready(function () {
                     html = `<div class="alert alert-danger">Something went wrong. Please try again.</div>`;
                 }
                 $("#alertBox").html(html);
+<<<<<<< HEAD
                 $('#newAppointmentModal').modal('hide');
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
             }
         });
     });

@@ -16,6 +16,10 @@ class ProductCategoryController extends Controller
    public function index(Request $request)
     {
         $page = $request->query('page', 1);
+<<<<<<< HEAD
+=======
+        $perPage = $request->get('per_page', 15);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         $token = session('auth_token');
 
         if (!$token) {
@@ -42,6 +46,11 @@ class ProductCategoryController extends Controller
         return view('productcategories.superAdminCategories', [
             'categories' => $categories,
             'pagination' => $categoriesData['pagination'] ?? null,
+<<<<<<< HEAD
+=======
+            'page' => $page,
+			'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
             'filters'    => $queryParams,
         ]);
     }

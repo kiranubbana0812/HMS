@@ -30,6 +30,10 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th>S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th>Name</th>                                
                                 <th>Description</th>
                                 <th>Status</th>
@@ -39,6 +43,10 @@
                         <tbody>
                             @forelse($categories as $category)
                                 <tr>
+<<<<<<< HEAD
+=======
+                                    <td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <td>{{ $category['name'] }}</td>
                                     <td>{{ $category['description'] }}</td>
                                     <td>

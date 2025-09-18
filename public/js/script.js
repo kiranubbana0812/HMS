@@ -1,8 +1,17 @@
 // Sidebar toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('mainContent');
+=======
+
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    //alert(sidebarToggle);
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    //alert(mainContent);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', function() {

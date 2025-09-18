@@ -132,6 +132,10 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th>S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th>Supplier Name</th>
                                 <th>Invoice No</th>
                                 <th>Purchase Date</th>
@@ -142,6 +146,10 @@
                         <tbody>
                             @forelse($purchasesData as $purchaseData)
                                 <tr>
+<<<<<<< HEAD
+=======
+                                    <td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <td>{{ $purchaseData['supplier']['name'] ?? '-' }}</td>
                                     <td>{{ $purchaseData['invoice_no'] ?? '-' }}</td>
                                     <td>{{ $purchaseData['purchase_date'] ?? '-' }}</td>
@@ -172,6 +180,7 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <div class="modal fade" id="purchaseModal" tabindex="-1" role="dialog" aria-labelledby="billingModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -210,6 +219,45 @@
             </div>
         </div>
     </div>
+=======
+<div class="modal fade" id="purchaseModal" tabindex="-1" role="dialog" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="purchaseModalLabel">Purchase Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div class="modal-info">
+          <div class="modal-info-row">
+            <span class="modal-label">Supplier Id:</span>
+            <span id="modal-supplier_id" class="modal-value"></span>
+          </div>
+          <div class="modal-info-row">
+            <span class="modal-label">Supplier Name:</span>
+            <span id="modal-supplier-name" class="modal-value"></span>
+          </div>
+          <div class="modal-info-row">
+            <span class="modal-label">Invoice No:</span>
+            <span id="modal-invoice_no" class="modal-value"></span>
+          </div>
+          <div class="modal-info-row">
+            <span class="modal-label">Purchase Date:</span>
+            <span id="modal-purchase_date" class="modal-value"></span>
+          </div>
+          <div class="modal-info-row">
+            <span class="modal-label">Total Amount:</span>
+            <span id="modal-total_amount" class="modal-value"></span>
+          </div>
+        </div>
+
+        <hr>
+        <p><strong>Batches</strong></p>
+        <div id="modal-availability-grid"></div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 </div>
 
 
@@ -357,4 +405,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 <script src="{{ asset('js/purchasescript.js') }}"></script>
+<<<<<<< HEAD
 @endpush
+=======
+@endpush
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795

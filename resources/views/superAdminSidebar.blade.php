@@ -7,7 +7,11 @@
         </a>
 
          <a class="nav-link" href="/superadmin/patients">
+<<<<<<< HEAD
             <i class="fas fa-user-injured me-2"></i>
+=======
+            <i class="fas fa-user-injured me-2"></i>            
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
             <span>Patients</span>
         </a>
  
@@ -45,10 +49,13 @@
             <i class="fas fa-file-invoice-dollar me-2"></i>
             <span>Purchases</span>
         </a>
+<<<<<<< HEAD
         <a class="nav-link" href="/superadmin/users">
             <i class="fas fa-file-invoice-dollar me-2"></i>
             <span>Users</span>
         </a>
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         <a class="nav-link" href="reports.html">
             <i class="fas fa-chart-bar me-2"></i>
             Reports

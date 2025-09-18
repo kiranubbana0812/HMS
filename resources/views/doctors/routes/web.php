@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-=======
->>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FrontdeskController;
@@ -16,10 +12,6 @@ use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\PurchaseController;
-<<<<<<< HEAD
-use App\Http\Controllers\UsersController;
-=======
->>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
 Route::get('/', function () {
     return redirect('/login');
@@ -56,12 +48,7 @@ Route::get('/superadmin/products', [ProductController::class, 'index'])->name('p
 Route::get('/superadmin/suppliers', [SupplierController::class, 'index'])->name('superadmin.suppliers');
 Route::get('/superadmin/units', [UnitController::class, 'index'])->name('superadmin.units');
 Route::get('/superadmin/productcategories', [ProductCategoryController::class, 'index'])->name('productcategories.index');
-Route::get('/superadmin/purchases', [PurchaseController::class, 'index'])->name('superadmin.purchases');
-<<<<<<< HEAD
-Route::get('/superadmin/users', [UsersController::class, 'index'])->name('superadmin.users');
 
-=======
->>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 //Route::get('/superadmin/purchage', [ProductController::class, 'index'])->name('superadmin.purchage');
 
 
@@ -75,28 +62,11 @@ Route::get('/admin/edit', [DashboardController::class, 'edit'])->name('admin.edi
 Route::put('/admin/update', [DashboardController::class, 'update'])->name('admin.update');
 Route::get('/admin/doctors', [DashboardController::class, 'doctors'])->name('admin.doctors');
 Route::get('/admin/billing', [BillingController::class, 'index'])->name('admin.billing');
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
+Route::get('/superadmin/purchases', [PurchaseController::class, 'index'])->name('superadmin.purchases');
 //Frontdesk
 Route::get('/frontdesk/dashboard', [FrontdeskController::class, 'dashboard'])->name('frontdesk.dashboard');
 Route::get('/frontdesk/appointments', [AppointmentController::class, 'index'])->name('frontdesk.appointments');
 Route::get('/frontdesk/doctors', [DoctorController::class, 'index'])->name('frontdesk.doctors');
 Route::get('/frontdesk/profile', [DashboardController::class, 'show'])->name('frontdesk.profile');
 Route::get('/frontdesk/edit', [DashboardController::class, 'edit'])->name('frontdesk.edit');
-<<<<<<< HEAD
 Route::put('/frontdesk/update', [DashboardController::class, 'update'])->name('frontdesk.update');
-
-//Pharmacy
-Route::get('/pharma/billing', [BillingController::class, 'index'])->name('pharma.billing');
-Route::get('/pharma/medicines', [ProductController::class, 'index'])->name('pharma.products');
-Route::get('/pharma/purchases', [PurchaseController::class, 'index'])->name('pharma.purchases');
-Route::get('/pharma/dashboard', [FrontdeskController::class, 'pharmaDashboard'])->name('pharma.dashboard');
-Route::get('/pharma/profile', [DashboardController::class, 'show'])->name('pharma.profile');
-Route::get('/pharma/edit', [DashboardController::class, 'edit'])->name('pharma.edit');
-Route::put('/pharma/update', [DashboardController::class, 'update'])->name('pharma.update');
-=======
-Route::put('/frontdesk/update', [DashboardController::class, 'update'])->name('frontdesk.update');
->>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795

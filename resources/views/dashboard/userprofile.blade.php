@@ -9,6 +9,7 @@
 <div class="container-fluid p-0">
 	<div class="row g-0">
         <div class="col-md-2">
+<<<<<<< HEAD
 			@if(session('user.role')==='superadmin')
 				@include('superAdminSidebar')
 			@elseif(session('user.role')==='admin') 
@@ -16,6 +17,22 @@
 			@elseif(session('user.role')=== 'frontdesk')
 				@include('sidebar')
 			@endif
+=======
+            @switch(session('user.role'))
+				@case('doctor')
+					@include('doctorSidebar')
+					@break
+
+                   
+
+				{{-- @case('frontdesk')
+					@include('frontdeskSidebar')
+					@break --}}
+
+				@default
+					@include('sidebar')
+			@endswitch  
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         </div>
 		<!-- Main Content -->
 		<div class="col-md-10 main-content" id="mainContent">

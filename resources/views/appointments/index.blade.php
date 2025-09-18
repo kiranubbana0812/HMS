@@ -161,7 +161,11 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+<<<<<<< HEAD
                                     <th>Patient ID</th>
+=======
+                                    <th>S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <th>Patient Name</th>
                                     <th>Doctor ID</th>
                                     <th>Doctor Name</th>
@@ -175,7 +179,11 @@
                             <tbody>
                                 @foreach($appointments as $appointment)
                                     <tr>
+<<<<<<< HEAD
                                         <td>{{ $appointment['patient']['patient_id'] }}</td>
+=======
+                                         <td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                         <td>{{ $appointment['patient']['user']['name'] }}</td>
                                         <td>{{ $appointment['doctor']['doctor_id'] }}</td>
                                         <td>{{ $appointment['doctor']['user']['name'] }}</td>

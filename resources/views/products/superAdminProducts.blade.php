@@ -13,7 +13,11 @@
         <div class="col-md-10 main-content px-3" id="mainContent">    
             <div class="content-header d-flex justify-content-between align-items-center mb-4"> 
                 <h4 class="mb-0 d-flex align-items-center" style="margin-left: 10px;">
+<<<<<<< HEAD
                     <i class="fas fa-user-injured me-2"></i>Medicines
+=======
+                    <i class="fas fa-user-injured me-2"></i>Products
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 </h4>
                 <div class="action-buttons">
                     <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#productFormModal" id="addProductBtn">
@@ -23,6 +27,7 @@
                     <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#searchProductsModal">
                         <i class="fas fa-search me-1 text-white"></i>
                         <span id="searchProductsBtn">Search</span>
+<<<<<<< HEAD
                     </button>      
                     <!-- Hidden file input -->
                     <input type="file" id="importFile" accept=".csv,.xlsx" style="display:none;">
@@ -40,6 +45,9 @@
                     <button id="exportBtn" class="btn btn-primary me-2">
                         <i class="fas fa-file-export me-1"></i> Export
                     </button>            
+=======
+                    </button>                  
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 </div>
             </div>
             <div class="dashboard-card">
@@ -67,9 +75,16 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
                                 <th>Name</th>
                                 <th>Unit</th>
                                 <th>Category</th>
+=======
+                                <th>S No</th>
+                                <th>Name</th>
+                                <th>Unit</th>
+                                <th>Category</th>                                 
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th>Description</th>
                                 <th>Total Stock</th>
                                 <th>Actions</th>
@@ -78,11 +93,21 @@
                         <tbody>
                             @forelse($products as $product)
                                 <tr>
+<<<<<<< HEAD
                                     <td>{{ $product['name'] }}</td>
                                     <td>{{ $product['unit']['name'] ?? 'N/A' }}</td>
                                     <td>{{ $product['category']['name'] ?? 'N/A' }}</td>
                                     <td>{{ $product['description'] }}</td>
                                      <td>{{ $product['product_stock'] ?? 'N/A' }}</td>
+=======
+                                    <td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+                                    <td>{{ $product['name'] }}</td>
+                                    <td>{{ $product['unit']['name'] ?? 'N/A' }}</td>
+                                    <td>{{ $product['category']['name'] ?? 'N/A' }}</td>
+                                     
+                                    <td>{{ $product['description'] }}</td>
+                                    <td>{{ $product['product_stock'] ?? 'N/A' }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <td>
                                         <div class="d-flex flex-column flex-md-row gap-1">
                                             <button class="btn btn-sm btn-outline-primary view-btn" data-product='@json($product)'>
@@ -210,6 +235,7 @@
                         <div class="col-md-4 fw-bold">Last updated on:</div>
                         <div class="col-md-8" id="modal-updated-at"></div>
                     </div>
+<<<<<<< HEAD
                     <div class="row mb-2">
                                  <table class="table table-bordered mt-3">
                                         <thead>
@@ -221,6 +247,23 @@
                                         <tbody id="batch-table-body"></tbody>                                    
                                  </table>               
                       </div>
+=======
+
+                                <div class="row mb-2">
+                                                        <table class="table table-bordered mt-3">
+                                    <thead>
+                                        <tr>
+                                        <th>Batch Code</th>
+                                        <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="batch-table-body">
+                                        <!-- Rows will be added dynamically -->
+                                    </tbody>
+                                    </table>
+                    </div>
+                </div>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 </div>
             </div>
         </div>
@@ -266,7 +309,17 @@
 <script>
 const API_BASE_URL = "{{ config('services.api.base_url') }}";
 const AUTH_TOKEN = localStorage.getItem('auth_token');
+<<<<<<< HEAD
 </script>
 <script src="{{ asset('js/productsScript.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
 @endpush
+=======
+
+</script>
+<script src="{{ asset('js/productsScript.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+
+
+@endpush
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795

@@ -15,6 +15,10 @@ class PatientController extends Controller
     public function index(Request $request)
     {
         $page = $request->query('page', 1);
+<<<<<<< HEAD
+=======
+		$perPage = 15;
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
         $token = session('auth_token'); // Get token from session
         
@@ -48,14 +52,26 @@ class PatientController extends Controller
         if(session('user.role') === "superadmin") {
             return view('patients.superAdminPatients', [
                 'patients' => $patientsData['data'] ?? [],
+<<<<<<< HEAD
                 'pagination' => $patientsData ?? null,   // ✅ send full array, not $patientsData['pagination']
+=======
+                'pagination' => $patientsData ?? null,
+                'page' => $page,
+				'perPage' =>$perPage,  
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 'filters' => $request->all()
             ]);
         }
         else {
             return view('patients.index', [
                 'patients' => $patientsData['data'] ?? [],
+<<<<<<< HEAD
                 'pagination' => $patientsData ?? null,   // ✅ same fix here
+=======
+                'pagination' => $patientsData ?? null,
+                'page' => $page,
+				'perPage' =>$perPage,  
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 'filters' => $request->all()
             ]);
         }

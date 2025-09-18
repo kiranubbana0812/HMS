@@ -16,8 +16,14 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $page = $request->query('page', 1);
+<<<<<<< HEAD
         $token = session('auth_token');
         
+=======
+        $perPage = $request->get('per_page', 15);
+        $token = session('auth_token');
+       // dd($token);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         if (!$token) {
             return redirect()->route('login')->withErrors(['message' => 'Session expired. Please log in again.']);
         }
@@ -26,6 +32,7 @@ class ProductController extends Controller
         $queryParams = $request->query();
         $queryParams['page'] = $page;
 
+<<<<<<< HEAD
         if(session('user.role') === "pharma") {
             $response = Http::withToken($token)->get(
                 env('API_BASE_URL') . '/api/v1/pharma/products', 
@@ -39,10 +46,18 @@ class ProductController extends Controller
             );    
         }
         
+=======
+        $response = Http::withToken($token)->get(
+            env('API_BASE_URL') . '/api/v1/admin/products', 
+            $queryParams
+        );
+
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         if (!$response->successful()) {
             return redirect()->back()->withErrors('Failed to fetch product data');
         }
 
+<<<<<<< HEAD
         $productsData = $response->json();
         
         // Fetch units
@@ -92,5 +107,38 @@ class ProductController extends Controller
                 'categories' => $categoriesData['data'] ?? [],
             ]);
         }
+=======
+         $productsData = $response->json();
+
+
+        
+        
+ 
+//dd($productsData);
+     
+        // Fetch units
+        $unitsResponse = Http::withToken($token)->get(
+            env('API_BASE_URL') . '/api/v1/admin/units'
+        );
+        $unitsData = $unitsResponse->json();
+
+        // Fetch categories
+        $categoriesResponse = Http::withToken($token)->get(
+            env('API_BASE_URL') . '/api/v1/admin/productcategories'
+        );
+        $categoriesData = $categoriesResponse->json();
+
+        return view('products.superAdminProducts', [
+            'products' => $productsData['data'] ?? [],
+            'pagination' => $productsData['pagination'] ?? null,
+            'filters' => $queryParams,
+            'page' => $page,
+			'perPage' =>$perPage,
+            'units' => $unitsData['data'] ?? [],
+            'categories' => $categoriesData['data'] ?? [],
+            
+           
+        ]);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
     }
 }

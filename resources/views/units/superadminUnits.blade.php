@@ -51,6 +51,10 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th class="text-center">S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th class="text-center">Unit Name</th>
                                 <th class="text-center">Unit Short Name</th>
                                 <th class="text-center">Description</th>
@@ -59,9 +63,17 @@
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
+<<<<<<< HEAD
                         <tbody>
                             @foreach($units as $unit)
                             <tr>
+=======
+
+                        <tbody>
+                            @foreach($units as $unit)
+                            <tr>
+								<td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 								<td>{{ $unit['name'] }}</td>
 								<td>{{ $unit['short_name'] }}</td>
 								<td>{{ $unit['description'] }}</td>
@@ -185,12 +197,22 @@
 						<div class="row">
 							<div class="col-md-6 mb-3">
 								<label>Unit Name</label>
+<<<<<<< HEAD
 								<input type="text" name="search" id="search" class="form-control" value="{{ $filters['search'] ?? '' }}">
 							</div>
 							<div class="col-md-6 mb-3">
 								<label>Unit Short Name</label>
 								<input type="text" id="short_name" name="short_name" class="form-control" value="{{ $filters['short_name'] ?? '' }}">
 							</div>
+=======
+								<input type="text" name="name" class="form-control" value="{{ $filters['name'] ?? '' }}">
+							</div>
+							<div class="col-md-6 mb-3">
+								<label>Unit Short Name</label>
+								<input type="text" name="short_name" class="form-control" value="{{ $filters['short_name'] ?? '' }}">
+							</div>							
+						
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 						</div>
 						<div class="text-center">
 							<button type="submit" class="btn btn-primary me-2">Search</button>

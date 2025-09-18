@@ -47,6 +47,10 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th class="text-center">S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th class="text-center">Doctor ID</th>
                                 <th class="text-center">Name</th>
                                 <th class="text-center">Department</th>
@@ -59,6 +63,10 @@
                         <tbody>
                             @foreach($doctors as $doctor)
                                 <tr>
+<<<<<<< HEAD
+=======
+                                    <td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <td>{{ $doctor['doctor_id'] }}</td>
                                     <td>{{ $doctor['user']['name'] }}</td>
                                     <td>{{ $doctor['department']['name'] }}</td>

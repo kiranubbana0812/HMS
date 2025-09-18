@@ -42,10 +42,13 @@ class UnitController extends Controller
 		
 
         $queryParams = array_filter($queryParams, fn($value) => !is_null($value) && $value !== '');
+<<<<<<< HEAD
 
         /*echo "<pre>";
         print_r($queryParams);
         exit();*/
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         
         $response = Http::withToken($token)
             ->get(env('API_BASE_URL') . '/api/v1/admin/units', $queryParams);
@@ -63,6 +66,11 @@ class UnitController extends Controller
             return view('units.superadminUnits', [
                 'units' => $unitsData['data'] ?? [],
                 'pagination' => $unitsData['pagination'] ?? null,
+<<<<<<< HEAD
+=======
+                'page' => $page,
+			    'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 'filters' => $queryParams,
             ]);
         }

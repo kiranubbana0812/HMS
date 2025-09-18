@@ -33,7 +33,11 @@
                     $userRole=session('user.role');
                 @endphp
                    
+<<<<<<< HEAD
                 @if($userRole === 'superadmin' || $userRole === 'admin' || $userRole === 'frontdesk' || $userRole === 'pharma')
+=======
+                @if($userRole === 'superadmin' || $userRole === 'admin' || $userRole === 'frontdesk')
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                     <div class="user-profile">
                         <span class="user-name">{{ session('user.name') }}</span>
                         <img src="{{ session('user.image') }}?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="{{ session('user.name') }}" class="profile-img"> 
@@ -44,8 +48,11 @@
                                 <a href="/admin/profile" class="dropdown-item"> Profile</a>
                             @elseif($userRole === 'frontdesk')
                                 <a href="/frontdesk/profile" class="dropdown-item"> Profile</a>
+<<<<<<< HEAD
                             @elseif($userRole === 'pharma')
                                 <a href="/pharma/profile" class="dropdown-item"> Profile</a>    
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                             @endif
                             <a href="javascript:void(0);" class="dropdown-item" id="logout-btn">Logout</a>
                         </div>

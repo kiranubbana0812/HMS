@@ -54,6 +54,7 @@ class BillingController extends Controller
 
         $queryParams = array_filter($queryParams, fn($value) => !is_null($value) && $value !== '');
         
+<<<<<<< HEAD
         if(session('user.role') === "pharma") {
             $response = Http::withToken($token)
             ->get(env('API_BASE_URL') . '/api/v1/pharma/sales', $queryParams);
@@ -63,6 +64,10 @@ class BillingController extends Controller
             ->get(env('API_BASE_URL') . '/api/v1/billing/admin/sales', $queryParams);
         }
         
+=======
+        $response = Http::withToken($token)
+            ->get(env('API_BASE_URL') . '/api/v1/billing/admin/sales', $queryParams);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
         $billingData = $response->json();
 
@@ -82,10 +87,26 @@ class BillingController extends Controller
                 'billing' => $billingData['data'] ?? [],
                 'pagination' => $billingData['pagination'] ?? null,
                 'filters' => $queryParams,
+<<<<<<< HEAD
+=======
+                'page' => $page,
+				'perPage' =>$perPage,
+                'units' => $unitsData['data'] ?? [],
+                'categories' => $categoriesData['data'] ?? [],
+            ]);
+		}elseif(session('user.role') === "frontdesk") {
+            return view('billing.frontdeskBilling', [
+                'billing' => $billingData['data'] ?? [],
+                'pagination' => $billingData['pagination'] ?? null,
+                'filters' => $queryParams,
+                'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 'units' => $unitsData['data'] ?? [],
                 'categories' => $categoriesData['data'] ?? [],
             ]);
 		}
+<<<<<<< HEAD
         else if(session('user.role') === "pharma") {
             return view('billing.pharmaBilling', [
                 'billing' => $billingData['data'] ?? [],
@@ -95,11 +116,18 @@ class BillingController extends Controller
                 'categories' => $categoriesData['data'] ?? [],
             ]);
         }
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 		else {
             return view('billing.index', [
                 'billing' => $billingData['data'] ?? [],
                 'pagination' => $billingData['pagination'] ?? null,
                 'filters' => $queryParams,
+<<<<<<< HEAD
+=======
+                'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
             ]);
 		}
     }

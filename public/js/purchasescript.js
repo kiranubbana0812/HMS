@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 const USER_ROLE = document.querySelector('meta[name="user-role"]').getAttribute('content');
 $(document).ready(function () {
     const API_BASE_URL = document.querySelector('meta[name="api-base-url"]').getAttribute('content');
     const AUTH_TOKEN = localStorage.getItem('auth_token');
     //const USER_ROLE = document.querySelector('meta[name="user-role"]').getAttribute('content');
+=======
+$(document).ready(function () {
+    const API_BASE_URL = document.querySelector('meta[name="api-base-url"]').getAttribute('content');
+    const AUTH_TOKEN = localStorage.getItem('auth_token');
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
     // View Doctor Details
     $('.view-btn').on('click', function () {
@@ -132,6 +138,7 @@ function initAutocomplete(inputSelector, hiddenFieldSelector, apiEndpoint) {
     });
 }
 
+<<<<<<< HEAD
 
 // Initialize both autocompletes
 //initAutocomplete("#purchaseSearch", "#supplier_id", "/api/v1/admin/supplier/search/autocomplete");
@@ -142,11 +149,18 @@ const supplierEndpoint = USER_ROLE === "pharma"
 
 // Initialize autocomplete with correct path
 initAutocomplete("#purchaseSearch", "#supplier_id", supplierEndpoint);
+=======
+// Initialize both autocompletes
+
+initAutocomplete("#purchaseSearch", "#supplier_id", "/api/v1/admin/supplier/search/autocomplete");
+
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
 $('#addpurchaseForm').on('submit', function (e) {
 
     e.preventDefault();
 
+<<<<<<< HEAD
     const isEdit = !!$('#id').val();   
            let url;
             try {                
@@ -171,6 +185,12 @@ $('#addpurchaseForm').on('submit', function (e) {
                 console.error("Error constructing the URL:", error);
                 // Optional: Show error to user or handle fallback
             }
+=======
+    const isEdit = !!$('#id').val();
+    const url = isEdit
+        ? `${API_BASE_URL}/api/v1/inventory/admin/purchase/${$('#id').val()}`
+        : `${API_BASE_URL}/api/v1/inventory/admin/purchase`;
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
     const method = isEdit ? 'PUT' : 'POST';
     const formData = {
@@ -263,10 +283,14 @@ $(document).on('input', '.productSearch', function () {
         const currentQuery = query;
 
         $.ajax({
+<<<<<<< HEAD
             //url: `${API_BASE_URL}/api/v1/admin/products/search`,
             url: USER_ROLE === "pharma"
             ? `${API_BASE_URL}/api/v1/pharma/products/search`
             : `${API_BASE_URL}/api/v1/admin/products/search`,
+=======
+            url: `${API_BASE_URL}/api/v1/admin/products/search`,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
             headers: { Authorization: `Bearer ${AUTH_TOKEN}` },
             method: 'GET',
             data: { q: currentQuery },

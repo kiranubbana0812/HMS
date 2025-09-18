@@ -28,6 +28,7 @@
                     </button>
                 </div>
             </div>
+<<<<<<< HEAD
             <div id="alertBox"></div>
             <div class="dashboard-card">
                 <div class="table-responsive">
@@ -51,6 +52,30 @@
                                 </div>
                             </div>
                         @endif
+=======
+            <div class="dashboard-card">
+                <div class="table-responsive">
+					{{-- Filters Summary --}}
+						@if(request()->query())
+							<div class="mb-3 p-3 border rounded bg-light">
+								<h6 class="mb-2">Active Filters:</h6>
+								<div class="d-flex flex-wrap align-items-center gap-2">
+									@foreach(request()->query() as $key => $value)
+										@if(!empty($value))
+											<span class="badge bg-primary">
+												{{ ucfirst(str_replace('_', ' ', $key)) }}: {{ $value }}
+											</span>
+										@endif
+									@endforeach
+
+									{{-- Clear All Filters --}}
+									<a href="{{ url()->current() }}" class="btn btn-sm btn-outline-danger ms-2">
+										Clear All Filters
+									</a>
+								</div>
+							</div>
+						@endif
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
                        
                     <table class="table table-hover text-center w-100 m-0">
@@ -77,7 +102,11 @@
                                     <td>{{ $doctor['experience'] }}</td>
                                     <td>{{ $doctor['consultation_fee'] }}</td>
                                     <td>
+<<<<<<< HEAD
                                         <div class="d-flex flex-column flex-md-row gap-1">
+=======
+										<div class="d-flex flex-column flex-md-row gap-1">
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                             <button class="btn btn-sm btn-outline-primary view-btn" data-doctor='@json($doctor)'>
                                                 <i class="fas fa-eye"></i>
                                             </button>
@@ -383,4 +412,8 @@
   
 </script>
 
+<<<<<<< HEAD
 @endpush
+=======
+@endpush
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795

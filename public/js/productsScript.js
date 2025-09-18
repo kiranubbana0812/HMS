@@ -1,4 +1,5 @@
 $(document).ready(function () {
+<<<<<<< HEAD
     $('.view-btn').on('click', function () {
         const product = $(this).data('product');
         //console.log(":: product DATA ::"+JSON.stringify(product));
@@ -13,6 +14,26 @@ $(document).ready(function () {
 
 
          if (!product || !Array.isArray(product.batches)) 
+=======
+ 
+   $('.view-btn').on('click', function () 
+   {
+    const product = $(this).data('product');
+
+
+    // Now you can use parsedProduct.id, etc.
+    $('#modal-name').text(product.name || '');
+    $('#modal-unit').text(product.unit?.name || '');
+    $('#modal-category').text(product.category?.name || '');
+    $('#modal-description').text(product.description || '');
+    $('#modal-gst').text(product.gst || '');
+    $('#modal-created-at').text(dayjs(product.created_at).format('DD-MM-YYYY'));
+    $('#modal-updated-at').text(dayjs(product.updated_at).format('DD-MM-YYYY'));
+
+
+            
+                if (!product || !Array.isArray(product.batches)) 
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 {
                     console.log("No batches available for this product");
                             $('#batch-table-body').html(`
@@ -26,8 +47,12 @@ $(document).ready(function () {
                             const filteredBatches = product.batches;               
                             const batchTotals = {};
 
+<<<<<<< HEAD
                             filteredBatches.forEach(batch => 
                             {
+=======
+                            filteredBatches.forEach(batch => {
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 const code = batch.batch_no || 'N/A';
                                 const qty = parseFloat(batch.quantity) || 0;
                                 batchTotals[code] = (batchTotals[code] || 0) + qty;
@@ -37,6 +62,7 @@ $(document).ready(function () {
 
    
                         const batchKeys = Object.keys(batchTotals);
+<<<<<<< HEAD
                         if (batchKeys.length > 0) 
                             {
                                 let hasRows = false;
@@ -55,6 +81,35 @@ $(document).ready(function () {
                                  });
 
                                  if (!hasRows) 
+=======
+                        if (batchKeys.length > 0) {
+                            let hasRows = false;
+
+                            batchKeys.forEach(code => 
+                                {
+                                    const totalQty = batchTotals[code];
+                                    if (totalQty > 0) {
+                                        const row = `
+                                            <tr>
+                                                <td>${code}</td>
+                                                <td>${totalQty}</td>
+                                            </tr>
+                                        `;
+                                        $('#batch-table-body').append(row);
+                                        hasRows = true;
+                                    }
+                            });
+
+                                 if (!hasRows) 
+                                {
+                                    $('#batch-table-body').append(`
+                                        <tr>
+                                            <td colspan="2" class="text-center">No batches available for this product</td>
+                                        </tr>
+                                    `);
+                                }
+                                } else 
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     {
                                         $('#batch-table-body').append(`
                                             <tr>
@@ -62,6 +117,7 @@ $(document).ready(function () {
                                             </tr>
                                         `);
                                     }
+<<<<<<< HEAD
                              } else 
                                     {
                                         $('#batch-table-body').append(`
@@ -69,12 +125,22 @@ $(document).ready(function () {
                                             </tr>
                                         `);
                                     }
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
                         // Show modal
                         $('#productModal').modal('show');
                     }
 
+<<<<<<< HEAD
     });
+=======
+   });
+
+
+
+
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
     // Open modal for new patient
     $('#addProductBtn').on('click', function () {
@@ -137,13 +203,18 @@ $(document).ready(function () {
         }
 
 
+<<<<<<< HEAD
         // ❌ Stop if invalid
+=======
+       
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         if (!valid) return;
 
         // Proceed with AJAX if valid ✅
         const API_BASE_URL = document.querySelector('meta[name="api-base-url"]').getAttribute('content');
         const productId = $('#product-id').val();
         const isEdit = !!productId;
+<<<<<<< HEAD
         const USER_ROLE = document.querySelector('meta[name="user-role"]').getAttribute('content');
 
         // 🔹 Pick base route depending on role
@@ -156,6 +227,12 @@ $(document).ready(function () {
         /*const url = isEdit
             ? `${API_BASE_URL}/api/v1/admin/products/${productId}`
             : `${API_BASE_URL}/api/v1/admin/products`;*/
+=======
+
+        const url = isEdit
+            ? `${API_BASE_URL}/api/v1/admin/products/${productId}`
+            : `${API_BASE_URL}/api/v1/admin/products`;
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
         const method = isEdit ? 'PUT' : 'POST';
 
@@ -189,6 +266,7 @@ $(document).ready(function () {
         });
     });
 
+<<<<<<< HEAD
     // Click on Import button
     $('#importBtn').on('click', function (e) {
         e.preventDefault(); // stop form submit if inside a form
@@ -279,5 +357,7 @@ $(document).ready(function () {
             alert('Failed to export products.');
         });
     });
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
 });

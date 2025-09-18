@@ -4,6 +4,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">   
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <style>
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
         .card-icon {
             font-size: 1.8rem;
             margin: 0;          /* reset spacing */
@@ -50,51 +54,112 @@
         <div class="col-md-2">
 			@include('superAdminSidebar')
         </div>
+<<<<<<< HEAD
         <div class="col-md-10 main-content px-3" id="mainContent">          
             <div class="row mb-4">
+=======
+        
+        <div class="col-md-10 main-content px-3" id="mainContent">          
+            <div class="row mb-4">
+
+
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 <div class="col-lg-3 col-md-6 mb-3">
                     <div class="dashboard-card">
                         <div class="card-content">
                             <div class="card-info">
+<<<<<<< HEAD
                                 <h6 class="card-title">Today's Appointments</h6>
                                 <h2 class="card-number">{{ $todaysCount['total'] }}</h2>
                                 <p class="card-subtitle">Scheduled</p>
                             </div>
                             <div class="card-icon purple-icon">
                                 <i class="fas fa-calendar-day"></i>
+=======
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fas fa-calendar-day card-icon purple-icon me-auto"></i>
+                                    <h6 class="card-title">Today's Appointments</h6>
+                                </div>
+                                <h2 class="card-number mt-2">
+                                 {{ $todaysCount['total'] }}
+                                </h2>
+                                 <p class="card-subtitle">Scheduled</p>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                             </div>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+           
+
+
+                <!-- Completed -->
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 <div class="col-lg-3 col-md-6 mb-3">
                     <div class="dashboard-card">
                         <div class="card-content">
                             <div class="card-info">
+<<<<<<< HEAD
                                 <h6 class="card-title">Completed</h6>
                                 <h2 class="card-number">{{ $todaysCount['completed'] }}</h2>
                                 <p class="card-subtitle">Today</p>
                             </div>
                             <div class="card-icon green-icon">
                                 <i class="fas fa-check-circle"></i>
+=======
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle card-icon text-success me-auto"></i>
+                                    <h6 class="card-title">Completed</h6>
+                                </div>
+                                <h2 class="card-number mt-2">
+                                  {{ $todaysCount['completed'] }}
+                                 
+                                </h2>
+                                 <p class="card-subtitle">Today</p>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                             </div>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+
+
+                 <!-- Cancelled -->
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 <div class="col-lg-3 col-md-6 mb-3">
                     <div class="dashboard-card">
                         <div class="card-content">
                             <div class="card-info">
+<<<<<<< HEAD
                                 <h6 class="card-title">Cancelled</h6>
                                 <h2 class="card-number">{{ $todaysCount['cancelled'] }}</h2>
                                 <p class="card-subtitle">Today</p>
                             </div>
                             <div class="card-icon pink-icon">
                                 <i class="fas fa-times-circle"></i>
+=======
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle card-icon text-danger me-auto"></i>
+                                    <h6 class="card-title">Cancelled</h6>
+                                </div>
+                                <h2 class="card-number mt-2">
+                                    {{ $todaysCount['cancelled'] }}
+                                </h2>
+                                 <p class="card-subtitle">Today</p>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+
+              
+           
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
             <div class="content-header d-flex justify-content-between align-items-center mb-4">
                 <h4 class="mb-0 d-flex align-items-center" style="margin-left: 10px;">
                     <i class="fas fa-user-injured me-2"></i>Appointments
@@ -135,7 +200,11 @@
 						@endif
                         <table class="table table-hover">
                             <thead>
+<<<<<<< HEAD
                                 <tr>
+=======
+                                <tr><th>S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <th>Patient ID</th>
                                     <th>Patient Name</th>
                                     <th>Doctor ID</th>
@@ -150,6 +219,10 @@
                             <tbody>
                                 @foreach($appointments as $appointment)
                                     <tr>
+<<<<<<< HEAD
+=======
+                                        <td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                         <td>{{ $appointment['patient']['patient_id'] }}</td>
                                         <td>{{ $appointment['patient']['user']['name'] }}</td>
                                         <td>{{ $appointment['doctor']['doctor_id'] }}</td>

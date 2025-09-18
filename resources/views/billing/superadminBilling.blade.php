@@ -56,7 +56,11 @@
 								@endforeach
 
 								{{-- Clear All Filters --}}
+<<<<<<< HEAD
 								<a href="{{ url()->current() }}" class="btn btn-sm btn-outline-danger ms-2">
+=======
+								<a href="/superadmin/billing" class="btn btn-sm btn-outline-danger ms-2">
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 									Clear All Filters
 								</a>
 							</div>
@@ -65,6 +69,10 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th class="text-center">S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th class="text-center">Customer Name</th>
                                 <th class="text-center">Phone Number</th>
                                 <th class="text-center">Billing date</th>
@@ -78,6 +86,10 @@
                         <tbody>
                             @foreach($billing as $billingValue)
                             <tr>
+<<<<<<< HEAD
+=======
+								<td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 								@if ($billingValue['patient_id'])
 									<td>{{ $billingValue['patient']['user']['name'] }}</td>
 									<td>{{ $billingValue['patient']['user']['phone'] }}</td>
@@ -248,7 +260,11 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
+<<<<<<< HEAD
 					<form method="GET" action="{{ route('billing.index') }}">
+=======
+					<form method="GET" action="{{ route('superadmin.billing') }}">
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 						<div class="row">
 							<div class="col-md-6 mb-3">
 								<label>Patient Name</label>

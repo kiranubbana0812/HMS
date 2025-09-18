@@ -8,13 +8,20 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 		@include('superAdminSidebar')
 		<!-- Main Content -->
 		<div class="col-md-10 main-content" id="mainContent">
 			<div class="content-header d-flex justify-content-between align-items-center mb-4">
 				<h4 class="mb-0"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</h4>
 			</div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 			<!-- Dashboard Cards -->
 			<div class="row">
 				<div class="col-lg-3 col-md-6 mb-4">

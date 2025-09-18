@@ -59,6 +59,11 @@ class SupplierController extends Controller
             return view('suppliers.superadminSuppliers', [
                 'suppliers' => $suppliersData['data'] ?? [],
                 'pagination' => $suppliersData['pagination'] ?? null,
+<<<<<<< HEAD
+=======
+                'page' => $page,
+				'perPage' =>$perPage,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 'filters' => $queryParams,
             ]);
         }

@@ -52,6 +52,7 @@ class FrontdeskController extends Controller
 				$data = $response->json();
 				return view('frontdesk.dashboard', compact('data'));
 			} else {
+<<<<<<< HEAD
 				return view('frontdesk.dashboard')->withErrors(['api' => 'Failed to load dashboard data, Please logout and login again.']);
 			}
         } catch (\Exception $e) {
@@ -93,6 +94,9 @@ class FrontdeskController extends Controller
 				return view('frontdesk.pharmaDashboard', compact('data'));
 			} else {
 				return view('frontdesk.pharmaDashboard')->withErrors(['api' => 'Failed to load dashboard data, Please logout and login again.']);
+=======
+				return view('frontdesk.dashboard')->withErrors(['api' => 'Failed to load dashboard data']);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 			}
         } catch (\Exception $e) {
 			DB::rollBack();

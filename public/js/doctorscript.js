@@ -135,6 +135,10 @@ $(document).ready(function () {
             },
             data: JSON.stringify(formData),
             success: function (res) {
+<<<<<<< HEAD
+=======
+                console.log("res",res);
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 $('#addDoctorModal').modal('hide');
                 $('#addDoctorForm')[0].reset();
                 $('#alertBox').html(`<div class="alert alert-success">${isEdit ? 'Doctor updated' : 'Doctor added'} successfully.</div>`);
@@ -147,4 +151,8 @@ $(document).ready(function () {
             }
         });
     });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795

@@ -13,10 +13,21 @@
 				@case('doctor')
 					@include('doctorSidebar')
 					@break
+<<<<<<< HEAD
 				@case('superadmin')
 					@include('superAdminSidebar')
 					@break
                 @default
+=======
+
+                   
+
+				{{-- @case('frontdesk')
+					@include('frontdeskSidebar')
+					@break --}}
+
+				@default
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 					@include('sidebar')
 			@endswitch      
         </div>

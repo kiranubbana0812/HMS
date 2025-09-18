@@ -51,6 +51,10 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th class="text-center">S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th class="text-center">Supplier Name</th>
                                 <th class="text-center">Contact Number</th>
                                 <th class="text-center">Supplier Email</th>
@@ -63,6 +67,10 @@
                         <tbody>
                             @foreach($suppliers as $supplier)
                             <tr>
+<<<<<<< HEAD
+=======
+								<td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 								<td>{{ $supplier['name'] }}</td>
 								<td>{{ $supplier['contact_number'] }}</td>
 								<td>{{ $supplier['email'] }}</td>
@@ -246,7 +254,11 @@
 							</div>
 							<div class="col-md-6 mb-3">
 								<label>Address</label>
+<<<<<<< HEAD
 								<input type="text" name="suppliers_phone_number" class="form-control" value="{{ $filters['address'] ?? '' }}">
+=======
+								<input type="text" name="suppliers_address" class="form-control" value="{{ $filters['address'] ?? '' }}">
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 							</div>
 							<div class="col-md-3 mb-3">
 								<label>From Date</label>

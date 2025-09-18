@@ -135,7 +135,10 @@ $(document).ready(function () {
 
 	const AUTH_TOKEN = localStorage.getItem('auth_token');
 	const API_BASE_URL = document.querySelector('meta[name="api-base-url"]').getAttribute('content');
+<<<<<<< HEAD
 	const USER_ROLE = document.querySelector('meta[name="user-role"]').getAttribute('content');
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 
 	// Medicine autocomplete (min 3 letters)
 	$(document).on('input', '.medicine-name', function () {
@@ -145,10 +148,14 @@ $(document).ready(function () {
 
 		if (query.length >= 3) {
 			$.ajax({
+<<<<<<< HEAD
 				//url: `${API_BASE_URL}/api/v1/admin/products/search`,
 				url: USER_ROLE === "pharma"
 	            ? `${API_BASE_URL}/api/v1/pharma/products/search`
 	            : `${API_BASE_URL}/api/v1/admin/products/search`,
+=======
+				url: `${API_BASE_URL}/api/v1/admin/products/search`,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 				headers: { Authorization: `Bearer ${AUTH_TOKEN}` },
 				method: 'GET',
 				data: { q: query },
@@ -256,10 +263,14 @@ $(document).ready(function () {
 
 		$.ajax({
             //url: "http://127.0.0.1:8000/api/v1/admin/puchase",
+<<<<<<< HEAD
             //url: `${API_BASE_URL}/api/v1/billing/admin/sales`,
             url: USER_ROLE === "pharma"
 	            ? `${API_BASE_URL}/api/v1/pharma/sales`
 	            : `${API_BASE_URL}/api/v1/billing/admin/sales`,
+=======
+            url: `${API_BASE_URL}/api/v1/billing/admin/sales`,
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 			headers: { Authorization: `Bearer ${AUTH_TOKEN}` },
             type: "POST",
             data: $(this).serialize(),

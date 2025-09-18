@@ -51,7 +51,11 @@
 
                                 <!-- Second row: count (left aligned under icon) -->
                                 <h2 class="card-number mt-2">
+<<<<<<< HEAD
                                     {{ $data['doctors_count'] ?? 0 }}
+=======
+                                    {{ $data['doctors_count'] ?? 0 }} 
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 </h2>
                             </div>
                         </div>

@@ -93,9 +93,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	                    case "superadmin":
 	                        redirectUrl = "/superadmin/dashboard";
 	                        break;
+<<<<<<< HEAD
 	                    case "pharma":
 	                        redirectUrl = "/pharma/dashboard";
 	                        break;
+=======
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
 	                }
 
 	                // Store session in Laravel

@@ -10,11 +10,21 @@
         <div class="col-md-2">
             @include('superAdminSidebar')
         </div>            
+<<<<<<< HEAD
         <div class="col-md-10 main-content px-3" id="mainContent">    
             <div class="content-header d-flex justify-content-between align-items-center mb-4"> 
                 <h4 class="mb-0 d-flex align-items-center" style="margin-left: 10px;">
                     <i class="fas fa-user-injured me-2"></i>Patients
                 </h4>
+=======
+        <div class="col-md-10 main-content px-3" id="mainContent">  
+            
+         <div class="content-header d-flex justify-content-between align-items-center mb-4"> 
+                <h4 class="mb-0 d-flex align-items-center" style="margin-left: 10px;">
+                    <i class="fas fa-user-injured me-2"></i>Patients
+                </h4>
+           
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 <div class="action-buttons">
                     <button class="btn btn-primary me-2">
                         <i class="fas fa-plus me-1"></i>
@@ -55,6 +65,10 @@
                     <table class="table table-hover text-center w-100 m-0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th>S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <th>Patient ID</th>
                                 <th>Name</th>
                                 <th>Age</th>
@@ -67,7 +81,11 @@
                         </thead>
                         <tbody>
                             @foreach($patients as $patient)
+<<<<<<< HEAD
                                 <tr>
+=======
+                                <tr><td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <td>{{ $patient['patient_id'] }}</td>
                                     <td>{{ $patient['user']['name'] }}</td>
                                     <td>{{ $patient['date_of_birth'] ? \Carbon\Carbon::parse($patient['date_of_birth'])->age : 'N/A' }}</td>

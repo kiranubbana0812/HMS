@@ -27,7 +27,11 @@
                     <div class="dashboard-card">
                         <div class="card-content">
                             <div class="card-info">
+<<<<<<< HEAD
                                 <h6 class="card-title">Today's Appointments</h6>
+=======
+                                <h6 class="card-title">Today's Appointments szdsadsadsada</h6>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                 <h2 class="card-number">{{ $todaysCount['total'] }}</h2>
                                 <p class="card-subtitle">Scheduled</p>
                             </div>
@@ -68,7 +72,11 @@
             </div>
             <div class="content-header d-flex justify-content-between align-items-center mb-4">
                 <h4 class="mb-0 d-flex align-items-center" style="margin-left: 10px;">
+<<<<<<< HEAD
                     <i class="fas fa-user-injured me-2"></i>Appointments
+=======
+                    <i class="fas fa-user-injured me-2"></i>Appointments 123456
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                 </h4>
             </div>
             <div id="alertBox"></div>
@@ -77,6 +85,10 @@
                         <table class="appointmentsTable table table-hover">
                             <thead>
                                 <tr>
+<<<<<<< HEAD
+=======
+                                    <th>S No</th>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                     <th>Patient ID</th>
                                     <th>Patient Name</th>
                                     <th>Doctor ID</th>
@@ -91,6 +103,10 @@
                             <tbody>
                                 @foreach($appointments as $appointment)
                                     <tr>
+<<<<<<< HEAD
+=======
+                                        <td>{{ ($page - 1) * $perPage + $loop->iteration }}</td>
+>>>>>>> 6b8595dc1c62273c0bff306bbd6788244a439795
                                         <td>{{ $appointment['patient']['patient_id'] }}</td>
                                         <td>{{ $appointment['patient']['user']['name'] }}</td>
                                         <td>{{ $appointment['doctor']['doctor_id'] }}</td>
