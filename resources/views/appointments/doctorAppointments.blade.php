@@ -68,7 +68,7 @@
             </div>
             <div class="content-header d-flex justify-content-between align-items-center mb-4">
                 <h4 class="mb-0 d-flex align-items-center" style="margin-left: 10px;">
-                    <i class="fas fa-user-injured me-2"></i>Appointments
+                    <i class="fas fa-user-injured me-2"></i>Appointments 123456
                 </h4>
             </div>
             <div id="alertBox"></div>
