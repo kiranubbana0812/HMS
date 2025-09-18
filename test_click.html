@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>File Upload Test</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <button id="importBtn" type="button">Import</button>
+  <input type="file" id="importFile" style="display:none;" accept=".csv,.xlsx">
+
+  <script>
+    $('#importBtn').on('click', function () {
+      console.log("Button clicked");
+      document.getElementById('importFile').click();
+    });
+
+    $('#importFile').on('change', function () {
+      console.log("File selected:", this.files[0]?.name);
+    });
+  </script>
+</body>
+</html>
