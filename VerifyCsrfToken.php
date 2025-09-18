@@ -1,0 +1,5 @@
+<?php
+
+protected $except = [
+    'api/*',
+];
